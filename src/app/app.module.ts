@@ -3,14 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodosComponent } from './todo-list/todos/todos.component';
+import { TodoItemComponent } from './todo-list/todo-item/todo-item.component';
+import { AddTodoComponent } from './todo-list/add-todo/add-todo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutTodoComponent } from './todo-list/about-todo/about-todo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent,
+    TodoItemComponent,
+    AddTodoComponent,
+    AboutTodoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
