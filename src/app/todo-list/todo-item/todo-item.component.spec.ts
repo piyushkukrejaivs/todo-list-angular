@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Todo } from 'src/app/Todo';
 
 import { TodoItemComponent } from './todo-item.component';
 
@@ -14,6 +15,8 @@ describe('TodoItemComponent', () => {
 
     fixture = TestBed.createComponent(TodoItemComponent);
     component = fixture.componentInstance;
+    let todo = new Todo();
+    component.todo = todo;
     fixture.detectChanges();
   });
 

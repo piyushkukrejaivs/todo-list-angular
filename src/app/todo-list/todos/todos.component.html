@@ -1,13 +1,33 @@
-<div class="container">
-    <h1 class="text-center mb-3">Todo List</h1>
-    <app-add-todo (todoAdd)="addTodoTask($event)"></app-add-todo>
-    <h4>Your Todo Tasks</h4>
-    <div *ngIf="this.todos.length === 0; else elseBlock">No tasks</div>
-    <ng-template #elseBlock>
-        <div *ngFor="let todo of todos; index as i">
-            <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodoTask($event)"
-                (todoCheckbox)="toggleTodoTask($event)">
-            </app-todo-item>
+<section class="vh-50" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-12">
+                <div class="card rounded-3">
+                    <div class="card-body p-12">
+
+                        <h1 class="text-center my-3 pb-3">To Do App</h1>
+
+
+                        <div *ngIf="this.todos.length === 0; else elseBlock">No tasks</div>
+                        <ng-template #elseBlock>
+                            <table class="table mb-4">
+                                <tbody>
+                                    <tr>
+                                        <div *ngFor="let todo of todos; index as i">
+                                            <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodoTask($event)"
+                                                (todoCheckbox)="toggleTodoTask($event)">
+                                            </app-todo-item>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ng-template>
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </ng-template>
-</div>
+    </div>
+</section>
+
+

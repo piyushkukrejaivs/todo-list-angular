@@ -1,17 +1,1 @@
-<div class="my-3">
-    <h4>Add a Todo</h4>
-    <form [formGroup]="addTaskForm" (ngSubmit)="addTask()">
-        <div class="mb-3">
-            <label for="title">Todo Title</label>
-            <input type="text" class="form-control" formControlName="taskTitle" id="title" name="title"
-                placeholder="Add title">
-        </div>
-        <div class="mb-3">
-            <label for="desc">Description</label>
-            <input type="text" class="form-control" formControlName="taskDesc" id="desc" name="desc"
-                placeholder="Task Description">
-        </div>
-        <button type="submit" class="btn btn-sm btn-primary">Add Task</button>
-    </form>
-</div>
-<br>
+<app-add-todo-form (todoAdd)="addTodoTask($event)"></app-add-todo-form>

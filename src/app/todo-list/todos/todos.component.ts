@@ -18,10 +18,6 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTodoTask(todo: Todo) {
-    this.localService.saveTodoTasks(this.todos, todo);
-  }
-
   deleteTodoTask(todo: Todo) {
     this.localService.deleteFromTodoTasks(this.todos, todo);
   }

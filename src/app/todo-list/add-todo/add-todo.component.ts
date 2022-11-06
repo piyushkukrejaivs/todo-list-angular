@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Todo } from 'src/app/Todo';
+import { LocalService } from '../services/local.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -9,29 +10,19 @@ import { Todo } from 'src/app/Todo';
 })
 export class AddTodoComponent implements OnInit {
 
-  title!: string;
-  desc!: string;
+  todos!: Todo[];
 
-  addTaskForm = this.fb.group({
-    taskTitle: [''],
-    taskDesc: ['']
-  });
+  constructor(private localService: LocalService) { 
+    this.todos = localService.getTodoTasks();  
+  }
 
   @Output() todoAdd: EventEmitter<Todo> = new EventEmitter();
-
-  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
   }
 
-  addTask() {
-    console.log(this.addTaskForm.value);
-    let todo = new Todo;
-    todo.sno = 8;
-    todo.title = this.addTaskForm.value.taskTitle;
-    todo.desc = this.addTaskForm.value.taskDesc;
-    todo.active = true;
-    this.todoAdd.emit(todo);
+  addTodoTask(todo: Todo) {
+    this.localService.saveTodoTasks(this.todos, todo);
   }
 
 }

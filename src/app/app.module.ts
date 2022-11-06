@@ -8,6 +8,7 @@ import { TodoItemComponent } from './todo-list/todo-item/todo-item.component';
 import { AddTodoComponent } from './todo-list/add-todo/add-todo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutTodoComponent } from './todo-list/about-todo/about-todo.component';
+import { AddTodoFormComponent } from './todo-list/add-todo-form/add-todo-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AboutTodoComponent } from './todo-list/about-todo/about-todo.component'
     TodosComponent,
     TodoItemComponent,
     AddTodoComponent,
-    AboutTodoComponent
+    AboutTodoComponent,
+    AddTodoFormComponent
   ],
   imports: [
     BrowserModule,

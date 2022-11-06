@@ -1,11 +1,12 @@
-<hr>
-<div class="mb-3">
-  <h5 [ngClass]="{'strike': !todo.active}">{{todo.title | titlecase}}</h5>
-  <p [ngClass]="{'strike': !todo.active}">{{todo.desc | lowercase}}</p>
-  <div class="mb-3 form-check">
+<table class="table mb-4">
+
+  <th class="col-1" scope="row">{{i + 1}}</th>
+  <td class="col-4" [ngClass]="{'strike': !todo.active}">{{todo.title | titlecase}}</td>
+  <td class="col-3" [ngClass]="{'strike': !todo.active}">{{todo.desc | lowercase}}</td>
+  <td class="col-4">
     <input type="checkbox" class="form-check-input" id="todo{{i}}" [checked]="!todo.active"
       (click)="toggleTaskDone(todo)">
-    <label class="form-check-label" for="todo{{i}}">Done</label>
-  </div>
-  <button class="btn btn-sm btn-danger" (click)="delete(todo)">Delete</button>
-</div>
+    <label class="form-check-label mx-3" for="todo{{i}}">Finished</label>
+    <button class="btn btn-sm btn-danger mx-3" (click)="delete(todo)">Delete</button>
+  </td>
+</table>
