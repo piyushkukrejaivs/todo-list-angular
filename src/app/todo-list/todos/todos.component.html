@@ -7,20 +7,13 @@
 
                         <h1 class="text-center my-3 pb-3">To Do App</h1>
 
-
                         <div *ngIf="this.todos.length === 0; else elseBlock">No tasks</div>
                         <ng-template #elseBlock>
-                            <table class="table mb-4">
-                                <tbody>
-                                    <tr>
-                                        <div *ngFor="let todo of todos; index as i">
-                                            <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodoTask($event)"
-                                                (todoCheckbox)="toggleTodoTask($event)">
-                                            </app-todo-item>
-                                        </div>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div *ngFor="let todo of todos; index as i">
+                                <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodoTask($event)"
+                                    (todoCheckbox)="toggleTodoTask($event)">
+                                </app-todo-item>
+                            </div>
                         </ng-template>
 
                     </div>
@@ -29,5 +22,3 @@
         </div>
     </div>
 </section>
-
-
